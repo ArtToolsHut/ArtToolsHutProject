@@ -1,0 +1,128 @@
+
+
+
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+
+<!--
+<head>
+        <title>Registration</title>
+    
+       
+      
+      </head>
+<div class="jumbotron">-->
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2> REGISTRATION</h2>
+                <hr>
+                <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" formControlName="buyerName" [(ngModel)]='buyerdetails.buyerName' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.buyerName.errors }" placeholder="John Doe"/>
+                        <div *ngIf="submitted && f.buyerName.errors" class="invalid-feedback">
+                            <div *ngIf="f.buyerName.errors.required">Name is required</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" formControlName="buyerEmail" [(ngModel)]='buyerdetails.buyerEmail' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.buyerEmail.errors }" placeholder="you@example.com"/>
+                        <div *ngIf="submitted && f.buyerEmail.errors" class="invalid-feedback">
+                            <div *ngIf="f.buyerEmail.errors.required">Email is required</div>
+                            <div *ngIf="f.buyerEmail.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div> 
+
+                    <div class="form-group">
+                        <label>Mobile No.</label>
+                        <input type="number" formControlName="mobileNo" [(ngModel)]='buyerdetails.mobileNo' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }" placeholder="947646453"/>
+                        <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback">
+                            <div *ngIf="f.mobileNo.errors.required">Mobile Number is required</div>
+                            <div *ngIf="f.mobileNo.errors.pattern">Enter 10 digit valid Mobile Number</div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" formControlName="userName"  [(ngModel)]='buyerdetails.userName' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" placeholder="Username"/>
+                        <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+                            <div *ngIf="f.userName.errors.required">Username is required</div>
+                            <div *ngIf="f.userName.errors.minlength">Username must be atleast 4 characters</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" formControlName="password" [(ngModel)]='buyerdetails.password' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="password"/>
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                            <div *ngIf="f.password.errors.minlength">Password must be atleast 6 characters</div>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary" (click)="formValidation(registerForm,buyerdetails)"  >Register.</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+<!--</div>-->
+<!--<button [disabled]="loading" class="btn btn-primary">Register</button>-->
+
+
+
+ <!--<div class="container">
+    The Modal -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">OTP</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          
+          <!-- Modal body -->
+          <div class="content">
+            <div class="o-c">
+              <div>
+                <div class="card-modal">
+                  <p class="a-o-i">Enter verification code</p>
+                  <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" *ngIf="showOtpComponent" [config]="config"></ng-otp-input>
+                  <span *ngIf="otp" class="o-t-p">Entered otp :- {{otp}}</span>
+                  <br/>
+                  <button type="button" (click)="register(registerForm.value)" class="btn btn-success" data-dismiss="modal">SUBMIT</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,132 @@
+header[role="banner"] #logo-main {
+  display: block;
+  margin: 20px auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  
+}
+#navbar-primary.navbar-default {
+  background: transparent;
+  border: none;
+}
+#navbar-primary.navbar-default .navbar-nav {
+  width: 100%;
+  text-align: center;
+}
+#navbar-primary.navbar-default .navbar-nav > li {
+  display: block;
+  float: none;
+}
+#navbar-primary.navbar-default .navbar-nav > li > a {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.navbar-custom {
+  background-color: #F08080;
+  margin-top: 0px;
+}
+
+form.form-group input[type=text] {
+padding: 10px;
+font-size: 17px;
+border: 1px solid grey;
+float: left;
+width: 80%;
+background: #f1f1f1;
+}
+
+form.form-group button {
+float: left;
+width: 20%;
+padding: 10px;
+background: #2196F3;
+color: white;
+font-size: 17px;
+border: 1px solid grey;
+border-left: none;
+cursor: pointer;
+}
+
+
+
+
+
+
+
+.right {
+float: right
+}
+
+
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+display: none;
+}
+
+
+input[type=search] {
+background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+border: solid 1px #ccc;
+padding: 9px 10px 9px 10px;
+width: 15px;
+-webkit-border-radius: 10em;
+-moz-border-radius: 10em;
+border-radius: 10em;
+-webkit-transition: all .5s;
+-moz-transition: all .5s;
+transition: all .5s;
+-webkit-appearance: textfield;
+outline: none;
+cursor: pointer;
+z-index: 5;
+}
+#search input[type=search].filled
+{
+width: 200px !important;
+padding-left: 32px;
+color: #4a83c0;
+background-color: #fff;
+cursor: pointer;
+
+}
+
+input[type=search] {
+width: 200px !important;
+background-color: #fff;
+border-color: #66CC75;
+padding-left: 32px;
+cursor: auto;
+-webkit-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+-moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+}
+
+#search input[type=search] {
+background-color: #fff;
+}
+
+#search input:-moz-placeholder {
+color: transparent;
+}
+
+#search input::-webkit-input-placeholder {
+color: transparent;
+}
+
+#search input[type=search].filled:-moz-placeholder{
+color:red;
+}
+#search input[type=search].filled::-webkit-input-placeholder{
+color:red;
+}
+
+
+
+.close
+{
+z-index:10;
+margin-left:-3rem;
+margin-right:1rem;
+}

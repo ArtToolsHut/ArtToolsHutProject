@@ -1,0 +1,63 @@
+
+<head>
+  <title>ArtToolsHut</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .navbar {
+      margin-bottom: 0px;
+    }
+  </style>
+</head>
+<body>
+
+      <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6" *ngFor="let product of pendingProducts">
+            
+                <div class="wrapper">
+                  <div class="container">
+                      <div class="row g-1">
+                          <div class="col-md-3">
+                              <div class="card p-3">
+                                  <div class="text-center"> <img src="http://localhost:8080/RESTAPI2018/Images/{{product.imageName}}" height="200px" width="200px"> </div>
+                                  <hr>
+                                  <div class="product-details"> <span class="font-weight-bold d-block"> {{product.productPrice | currency: 'Rs.'}}</span> <span>{{product.productName}}</span>
+                                      <div class="buttons d-flex flex-row">
+                                        <button (click)="accept(product)" class="btn btn-success cart-button btn-block" >Accept</button>
+                                        <button (click)="reject(product)" class="like btn btn-danger" type="button">Reject</button>
+                                        
+                                         
+                                      </div>
+                                      <div class="weight"> <small>SELLER ID: {{product.sellerDetails.sellerId}} , {{product.sellerDetails.sellerName}}</small> </div>
+                                      <!--<div class="weight"> <small>SELLER NAME: {{product.sellerDetails.sellerName}}</small> </div>--> 
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</body>

@@ -1,0 +1,51 @@
+<br>
+
+<head>
+  <title>ArtToolsHut</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .navbar {
+      margin-bottom: 0px;
+    }
+  </style>
+</head>
+
+
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let product of products">
+          <div class="product-grid4">
+                    
+                    <a>
+                      <img class="pic-1" src="http://localhost:8080/RESTAPI2018/Images/{{product.imageName}}" height="250px"/>
+                      
+                    </a> 
+                    
+              <!--</div>-->
+              <div class="card-body" height="250px">
+         
+                <!--<h4 class="card-title" style="height: 50px">{{product.sellerdetails.sellerId}}</h4>-->
+                <h4 align="left" class="card-title" style="height: 20px"><b>Product Id: </b>{{product.productId}}</h4>
+                <h4 align="left" class="card-title" style="height: 40px"><b>Product Name: </b>{{product.productName}}</h4>
+                <h4 align="left" class="card-text" style="height: 20px"><b>Available Quantity: </b>{{product.availability}}</h4>
+                  <div align="left" class="price"><b>Product Price: </b>
+                    {{product.productPrice | currency: 'Rs.'}}
+                  </div>
+
+                  <button align = "left" class="btn btn-primary" style="height: 40px" >EDIT  <span class="glyphicon glyphicon-edit"></span></button>
+              
+                  <button align = "right" class="like btn btn-default" style="height: 40px" >  <span class="glyphicon glyphicon-trash"></span></button>						
+                 
+                </div>
+               
+              </div>
+      </div>
+    </div>
+</div>

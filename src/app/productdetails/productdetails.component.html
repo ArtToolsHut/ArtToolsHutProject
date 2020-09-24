@@ -1,0 +1,430 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<head>  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Detail</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+						
+						<div class="preview-pic tab-content">
+						  <div class="tab-pane active" id="pic-1"><img src="http://localhost:8080/RESTAPI2018/Images/{{productPage.imageName}}" /></div>
+						  <!--<div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
+						  <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
+						  <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
+						  <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>-->
+						</div>	
+					</div>
+					<div class="details col-md-6">
+						<h3 class="product-title">{{productPage.productName}}</h3>
+						<div class="rating">
+							<div class="stars">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+							<span class="review-no">41 reviews</span>
+						</div>
+						<p class="product-description">{{productPage.description}}</p>
+						<h4 class="price">current price: <span>{{productPage.productPrice | currency: 'Rs. '}}</span></h4>
+						<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+						<div class="action">
+							<td data-th="Quantity"> ADD QUANTITY
+								<input type="number" class="form-control text-center" value="1" [(ngModel)]='quantity' max={{productPage.availability}}>
+							</td>
+							<br/>
+							<button *ngIf="(service.userauthenticated$ | async) === false" (click)="addToCart(productPage,quantity)" class="add-to-cart btn btn-success" type="button">Add to cart</button>
+							<button *ngIf="(service.userauthenticated$ | async) === true" [routerLink]="['/login','2']" class="add-to-cart btn btn-danger" type="button">Add to cart</button>
+							
+							<button (click)="addToWishList(productPage)" class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Product list for Ecommerce Website</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+body {
+	font-family: "Open Sans", sans-serif;
+}
+h2 {
+	color: #000;
+	font-size: 26px;
+	font-weight: 300;
+	text-align: center;
+	text-transform: uppercase;
+	position: relative;
+	margin: 30px 0 80px;
+}
+h2 b {
+	color: #ffc000;
+}
+h2::after {
+	content: "";
+	width: 100px;
+	position: absolute;
+	margin: 0 auto;
+	height: 4px;
+	background: rgba(0, 0, 0, 0.2);
+	left: 0;
+	right: 0;
+	bottom: -20px;
+}
+.carousel {
+	margin: 50px auto;
+	padding: 0 70px;
+}
+.carousel .item {
+	min-height: 330px;
+    text-align: center;
+	overflow: hidden;
+}
+.carousel .item .img-box {
+	height: 160px;
+	width: 100%;
+	position: relative;
+}
+.carousel .item img {	
+	max-width: 100%;
+	max-height: 100%;
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
+.carousel .item h4 {
+	font-size: 18px;
+	margin: 10px 0;
+}
+.carousel .item .btn {
+	color: #333;
+    border-radius: 0;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: none;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin-top: 5px;
+    line-height: 16px;
+}
+.carousel .item .btn:hover, .carousel .item .btn:focus {
+	color: #fff;
+	background: #000;
+	border-color: #000;
+	box-shadow: none;
+}
+.carousel .item .btn i {
+	font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.carousel .thumb-wrapper {
+	text-align: center;
+}
+.carousel .thumb-content {
+	padding: 15px;
+}
+.carousel .carousel-control {
+	height: 100px;
+    width: 40px;
+    background: none;
+    margin: auto 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+.carousel .carousel-control i {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    margin: -16px 0 0 0;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: none;
+    font-weight: bold;
+}
+.carousel .item-price {
+	font-size: 13px;
+	padding: 2px 0;
+}
+.carousel .item-price strike {
+	color: #999;
+	margin-right: 5px;
+}
+.carousel .item-price span {
+	color: #86bd57;
+	font-size: 110%;
+}
+.carousel .carousel-control.left i {
+	margin-left: -3px;
+}
+.carousel .carousel-control.left i {
+	margin-right: -3px;
+}
+.carousel .carousel-indicators {
+	bottom: -50px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 10px;
+	height: 10px;
+	margin: 4px;
+	border-radius: 50%;
+	border-color: transparent;
+}
+.carousel-indicators li {	
+	background: rgba(0, 0, 0, 0.2);
+}
+.carousel-indicators li.active {	
+	background: rgba(0, 0, 0, 0.6);
+}
+.star-rating li {
+	padding: 0;
+}
+.star-rating i {
+	font-size: 14px;
+	color: #ffc000;
+}
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Trending <b>Products</b></h2>
+			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+			<!-- Carousel indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>   
+			<!-- Wrapper for carousel items -->
+			<div class="carousel-inner">
+				<div class="item carousel-item active">
+					<div class="row">
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="data:image/jpeg;base64,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" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<h4>Faber Caste</h4>
+									<p class="item-price"><span>RS.50.00</span></p>
+									<div class="star-rating">
+										<ul class="list-inline">
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+										</ul>
+									</div>
+									<a href="#" class="btn btn-primary">Add to Cart</a>
+								</div>						
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="https://images-na.ssl-images-amazon.com/images/I/61dAMt9l3sL._SL1500_.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<h4>Unicorn Mechanical Pencil</h4>
+									<p class="item-price"><span>Rs.20.99</span></p>
+									<div class="star-rating">
+										<ul class="list-inline">
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+										</ul>
+									</div>
+									<a href="#" class="btn btn-primary">Add to Cart</a>
+								</div>						
+							</div>
+						</div>		
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="https://i2.wp.com/lokseva.store/wp-content/uploads/2019/02/NATRAJ-Bold-Writing-Pencils-pack-of-10-.png" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<h4>Natraj led Pencils</h4>
+									<p class="item-price"><span>Rs.40.00</span></p>
+									<div class="star-rating">
+										<ul class="list-inline">
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+										</ul>
+									</div>
+									<a href="#" class="btn btn-primary">Add to Cart</a>
+								</div>						
+							</div>
+						</div>								
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="https://images-na.ssl-images-amazon.com/images/I/81%2BsG1T9RPL._AC_SY355_.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<h4>Camlin SketchBook</h4>
+									<p class="item-price"><span>Rs.250.00</span></p>
+									<div class="star-rating">
+										<ul class="list-inline">
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+										</ul>
+									</div>
+									<a href="#" class="btn btn-primary">Add to Cart</a>
+								</div>						
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item carousel-item">
+					<div class="row">
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="https://i7.fnp.com/images/pr/l/v20190715235211/unique-designer-set-of-3-rakhis_1.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<h4>Special Rakhi</h4>
+									<p class="item-price"><span>Rs.30.00</span></p>
+									<div class="star-rating">
+										<ul class="list-inline">
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+										</ul>
+									</div>
+									<a href="#" class="btn btn-primary">Add to Cart</a>
+								</div>						
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="https://www.prozy.in/wp-content/uploads/2020/01/7.4.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<h4>Class Jumbo NoteBook</h4>
+									<p class="item-price"><span>Rs.60.00</span></p>
+									<div class="star-rating">
+										<ul class="list-inline">
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+										</ul>
+									</div>
+									<a href="#" class="btn btn-primary">Add to Cart</a>
+								</div>						
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="https://image.made-in-china.com/2f0j00rDEUnwkofbcF/Popular-Gift-Pencil-Pouch-Waterproof-School-Students-Pen-Pencil-Case.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<h4>Pouch</h4>
+									<p class="item-price"><span>Rs.30.00</span></p>
+									<div class="star-rating">
+										<ul class="list-inline">
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+										</ul>
+									</div>
+									<a href="#" class="btn btn-primary">Add to Cart</a>
+								</div>						
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="https://cdn.shopify.com/s/files/1/1431/0846/products/STA-CLI-UNI-BLU_2400x.jpg?v=1575477077" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<h4> Miniso Exam Pad</h4>
+									<p class="item-price"><span>Rs.60.00</span></p>
+									<div class="star-rating">
+										<ul class="list-inline">
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+										</ul>
+									</div>
+									<a href="#" class="btn btn-primary">Add to Cart</a>
+								</div>						
+							</div>
+						</div>						
+					</div>
+				</div>
+				
+			</div>
+			
+			<a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+				<i class="fa fa-angle-left"></i>
+			</a>
+			<a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+				<i class="fa fa-angle-right"></i>
+			</a>
+		</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

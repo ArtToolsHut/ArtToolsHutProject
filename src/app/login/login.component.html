@@ -1,0 +1,103 @@
+
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+</head>
+
+
+<body>
+
+
+
+<section class="login-block">
+    <div class="container">
+	<div class="row">
+		<div class="col-md-4 login-sec">
+        <h2 class="text-center">Login Now</h2>
+        <h4>Login With Email Id</h4>
+		    <form #loginForm="ngForm" class="form-group" (ngSubmit)="validateUser(loginForm.value)" novalidate>
+  <div class="form-group">
+    <div class="input-group">
+        <span class="input-group-addon"> <i class="glyphicon glyphicon-user "></i> </span>
+        <input type="text" class="form-control" name="emailId" ngModel required  #userName="ngModel" placeholder="Email" style="font-size: small;"><br />
+        </div>
+        <br>
+
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>    
+      <input type="password" class="form-control" name="password" ngModel required #password="ngModel" placeholder="Password"  style="font-size: small;" ><br />
+      
+      </div>
+      
+      <div class="col-auto text-right" > <a [routerLink]="['/forgotpassword']" class="pass">Forgot password?</a></div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid" style="width: 70px; font-size: small;">Login</button>
+  </div>
+
+  
+    
+    <button class="login-Btn" #loginRef>
+         <img class="social-btn-icon" alt="Login with Google" src="https://hrcdn.net/fcore/assets/google-colored-20b8216731.svg">  Sign in with Google+
+      </button><br/><br/>
+    <h4>Don't have an account?<a [routerLink]="['/regbuyer']">Register here</a></h4>                
+</form>
+		</div>
+		<div class="col-md-8 banner-sec">    
+    <div >
+      <img class="d-block img-fluid" src="https://hawaii.armymwr.com/application/files/2615/4024/3686/artscraft.jpg" >
+    </div>
+            </div>	  
+		</div>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+</section>
+  
+    
+  
+      <!-- The Modal -->
+      <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">OTP</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="content">
+              <div class="o-c">
+                <div>
+                  <div class="card-modal">
+                    <p class="a-o-i">Enter verification code</p>
+                    <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" *ngIf="showOtpComponent" [config]="config"></ng-otp-input>
+                    <span *ngIf="otp" class="o-t-p">Entered otp :- {{otp}}</span>
+                    <br/>
+                    <button type="button" (click)="submitOtp(otp)" class="btn btn-success" data-dismiss="modal">SUBMIT</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+      
+   
+
+
+
+
+
+
+
+
+  </body>
+  

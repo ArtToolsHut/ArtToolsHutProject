@@ -1,0 +1,72 @@
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    </head>
+    
+    
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <div class="container">
+        <table id="cart" class="table table-hover table-condensed">
+            <thead>
+                <!--Line added-->
+                <h2 style ="text-align: center">CART DISPLAY</h2>
+                <!--ends here-->
+                <tr>
+                            
+                                <th style="width:50%; font-size: medium ;">Product</th>
+                                <th style="width:10%; font-size: medium ; ">Price</th>
+                                <th style="width:8%; font-size: medium ;">Quantity</th>
+                                <th style="width:22%; font-size: medium ;" class="text-center">Subtotal</th>
+                                <th style="width:10%"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--added new <tr>-->
+                            <tr *ngFor = "let productDetails of cartList">
+                                
+                                <!--ended new-->
+                                <td data-th="Product">
+                                    <div class="row">
+                                        <div class="col-sm-2 hidden-xs"><img src="http://localhost:8080/RESTAPI2018/Images/{{productDetails.product.imageName}}" alt="..." class="img-responsive"/></div>
+                                        <div class="col-sm-10">
+                                            <h4 class="nomargin">{{productDetails.product.productName}}</h4>
+                                            <p>{{productDetails.product.productBrand}}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-th="Price">{{productDetails.product.productPrice}}</td>
+                                <td data-th="Quantity">{{productDetails.quantity}}</td>
+                                <td data-th="Subtotal" class="text-center">{{productDetails.product.productPrice * productDetails.quantity}}</td>
+                                <td class="actions" data-th="">
+                                    <button class="btn btn-danger btn-sm" (click)="deleteCartItem(productDetails)"><i class="fa fa-trash-o"></i></button>								
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="visible-xs">
+                                <td class="text-center" ><strong>{{calculateTotal(cartList)}}</strong></td>
+                        
+                            </tr>
+                            <tr>
+                                <td><a [routerLink]="['/home']" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                                <td colspan="2" class="hidden-xs"></td>
+                                <td class="hidden-xs text-center"><strong>Total {{allTotal}}</strong></td>
+                                <button type="button" class="btn btn-success btn-block" (click)="getAddress()" >Checkout <i class="fa fa-angle-right"></i></button>
+                            </tr>
+                        </tfoot>
+                    </table>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    

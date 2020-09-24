@@ -1,0 +1,85 @@
+<br>
+<br>
+
+<head>
+  <title>ArtToolsHut</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .navbar {
+      margin-bottom: 0px;
+    }
+  </style>
+</head>
+<body>
+
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<div class="container">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:10%;">ID</th>
+    <th style="width:28%;">Name</th>
+    <th style="width:28%;">Email</th>
+    <th style="width:20%;">Mobile</th>
+    <th style="width:35%;">Username</th>
+    
+  </tr>
+  <tr *ngFor='let buyerdetail of buyerdetails'>
+    <td>{{buyerdetail.buyerId}}</td>
+    <td>{{buyerdetail.buyerName | uppercase}}</td>
+    <td>{{buyerdetail.buyerEmail | lowercase}}</td>
+    <td>{{buyerdetail.mobileNo}}</td>
+    <td>{{buyerdetail.userName}}</td>
+    
+</tr>
+ 
+</table>
+</div>
+
+
+
+<!--
+  
+
+<div class="well">
+    <table class="table table-bordered table-striped table-hover table-sm text-center">
+      <thead>
+        <tr class="bg-info text-white">
+            <th>ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>MOBILE</th>
+            <th>USERNAME</th>
+            <th>PASSWORD</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let buyerdetail of buyerdetails'>
+            <td>{{buyerdetail.buyerId}}</td>
+            <td>{{buyerdetail.buyerName | uppercase}}</td>
+            <td>{{buyerdetail.buyerEmail | lowercase}}</td>
+            <td>{{buyerdetail.mobileNo}}</td>
+            <td>{{buyerdetail.userName}}</td>
+            <td>{{buyerdetail.password}}</td>
+          
+        </tr>
+       
+      </tbody>
+    </table>
+</div>
+
+
+
+-->

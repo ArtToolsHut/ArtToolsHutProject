@@ -1,0 +1,100 @@
+
+<head>
+    <title>ArtToolsHut</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      .navbar {
+        margin-bottom: 0px;
+      }
+    </style>
+  </head>
+  <body>
+ 
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  
+  <form class="form-horizontal">
+  <fieldset>
+  
+  <legend>PRODUCTS</legend>
+  <form #addProductsForm="ngForm" class="form-group" (ngSubmit)="OnSubmit(addProductsForm.value)">
+  
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="productName">PRODUCT NAME</label>  
+    <div class="col-md-4">
+    <input type="text" #productName ngModel name="productName" id="productName" placeholder="PRODUCT NAME" class="form-control input-md" required="">
+      
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="col-md-4 control-label"for="productType">PRODUCT TYPE</label>  
+    <div class="col-md-4">
+    <input type="text" #productType ngModel name="productType" id="productType" placeholder="PRODUCT TYPE" class="form-control input-md" required="" >
+      
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="productBrand">PRODUCT BRAND</label>
+    <div class="col-md-4">
+    <input type="text" #productBrand ngModel name="productBrand" id="productBrand" placeholder="PRODUCT BRAND" class="form-control input-md" required="" >
+     
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="productPrice">PRODUCT PRICE</label>  
+    <div class="col-md-4">
+    <input type="number" #productPrice ngModel name="productPrice" id="productPrice" placeholder="PRODUCT PRICE" class="form-control input-md" required="" >
+      
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="availability">AVAILABLE QUANTITY</label>  
+    <div class="col-md-4">
+    <input type="number" #availability ngModel name="availability" id="availability" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required="" >
+      
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="description">PRODUCT DESCRIPTION</label>
+    <div class="col-md-4">                     
+      <textarea class="form-control" #description ngModel name="description" id="description"></textarea>
+    </div>
+  </div>
+  
+      <div class="form-group">
+    
+        <img [src]="imageUrl" style="width:250px;height:200px">
+          <label class="col-md-4 control-label" for="productImage">Upload Image</label>
+          <div class="col-md-4">
+            <input type="file" #productImage accept="image/*" (change)="handleFileInput($event.target.files)">
+            <br>   
+            <button type="submit"  (click)="showToasterSuccess()" class="btn btn-success" [disabled]="addProductsForm.value=='' || !addProductsForm.valid" >Submit </button>
+              
+          </div>
+        </div>
+       <!--
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="singlebutton">Single Button</label>
+          <div class="col-md-4">
+            <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
+          </div>
+          </div>
+        -->
+  </form>
+        </fieldset>
+        </form>
+        <br/>
+        <br/>
+        <br/>
+        

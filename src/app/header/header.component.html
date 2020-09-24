@@ -1,0 +1,149 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Navbar with Logo Centered Above</title>
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css'>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+  integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <header role="banner">
+    <a href="{LINK_UNESC}" traget="_blank">
+    <img id="logo-main" [src]="image.image1" width="150" alt="Logo Thing main logo">
+    </a>
+    
+  </header>
+</body>
+
+<head>
+    <title>ArtToolsHut</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      .navbar {
+        position: sticky;
+        margin-bottom: 0px;
+      }
+
+    </style>
+  </head>
+  <body>
+ 
+    <!--default nav-->
+    <div class="container-fluid" >
+      <nav class="navbar navbar-default navbar-expand-lg navbar-custom" id="navbar" >
+        <div class="container-fluid" *ngIf="(userService.authenticated$ | async) === true">
+          <div class="navbar-header"> </div>
+          <ul class="nav navbar-nav">
+            <li><a [routerLink]="['/home']" style="color: white;"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li><a [routerLink]="['/about']" style="color: white; font-size:medium;">ABOUT US</a></li>
+            <li><a [routerLink]= "['/productbybrand', 'HandMade']" style="color: white; font-size: medium;">HANDMADE</a></li>
+            <li><a [routerLink]= "['/productbytype', 'Stationery']" style="color: white;  font-size: medium;">STATIONERY</a></li>
+            <li><a [routerLink]= "['/productbybrand', 'Archies']" style="color: white;  font-size: medium;">ARCHIES</a></li>
+            <li><a [routerLink]= "['/productbytype', 'Homedecor']" style="color: white;  font-size: medium;">DECOR</a></li>
+            <li><a [routerLink]= "['/productbytype', 'Office']" style="color: white;  font-size: medium;">OFFICE SUPPLIES</a></li>
+            <li><a [routerLink]= "['/productbytype', 'Gifts']" style="color: white;  font-size: medium;">GIFTING</a></li>
+            <li><a [routerLink]="['/login','1']" style="color: white;"><span class="glyphicon glyphicon-user" ></span></a></li>
+            <li><a  style="color: white;"><span class="glyphicon glyphicon-heart-empty" title="login to view your wishlist"></span></a></li>
+            <li><a  style="color: white;"><span class="glyphicon glyphicon-shopping-cart" title="login to view your cart"></span></a></li>
+            
+            <li><a [routerLink]="['/sellerlogin']" style="color: white;  font-size: medium;"><span class="glyphicon glyphicon-camera ">SELL</span></a></li>
+            <form #search="ngForm"class="form-group" style="margin:auto;max-width:300px" title="Tap To Search">   
+              <input  type="search" name="search"  aria-describedby="search-text" [(ngModel)]="searchText" placeholder="Enter text to search"
+              autofocus>
+            
+                <ul class="list-group list-group-flush" style="display: inline;" *ngIf= "searchText">
+                  <li class="list-group-item " *ngFor="let c of products | appFilter: searchText" >
+                    <a  (click)="onSelect(c)">{{c}}</a> 
+                  </li>
+                </ul>
+              </form>
+            
+            </ul>
+        </div>
+        
+<!--        <li><a [routerLink]="['/orderdetails/:productId/:quantity']" style="color: white;"><span class="glyphicon glyphicon-shopping-cart "title="Cart"></span>{{productDetails.length}}</a></li>
+-->
+    <!--login-->
+    <div class="container-fluid" *ngIf="(userService.userauthenticated$ | async) === false">
+      <div class="navbar-header"> </div>
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/home']" style="color: white;"><span class="glyphicon glyphicon-home" title="Home"></span></a></li>
+        <li><a [routerLink]="['/about']" style="color: white; font-size:medium;">ABOUT US</a></li>
+        <li><a [routerLink]= "['/productbybrand', 'Handmade']" style="color: white; font-size: medium;">HANDMADE</a></li>
+        <li><a [routerLink]= "['/productbytype', 'Stationery']" style="color: white;  font-size: medium;">STATIONERY</a></li>
+        <li><a [routerLink]= "['/productbybrand', 'Archies']" style="color: white;  font-size: medium;">ARCHIES</a></li>
+        <li><a [routerLink]= "['/productbytype', 'Homedecor']" style="color: white;  font-size: medium;">DECOR</a></li>
+        <li><a [routerLink]= "['/productbytype', 'Office']" style="color: white;  font-size: medium;">OFFICE SUPPLIES</a></li>
+        <li><a [routerLink]= "['/productbytype', 'Gifts']" style="color: white;  font-size: medium;">GIFTING</a></li>
+        
+        <li><a [routerLink]="['/profile']" style="color: white;"><span class="glyphicon glyphicon-user" ></span></a></li>
+      
+        
+        <li><a [routerLink]="['/wishlist']" style="color: white;"><span class="glyphicon glyphicon-heart-empty"title="Wish List"></span></a></li>
+        <li><a [routerLink]="['/cart-display']"  style="color: white;"><span class="glyphicon glyphicon-shopping-cart "title="Cart"></span></a></li>
+        <li><a [routerLink]="['/sellerlogin']" style="color: white;  font-size: medium;"><span class="glyphicon glyphicon-camera ">SELL</span></a></li>
+        <form #search="ngForm"class="form-group" style="margin:auto;max-width:300px" title="Tap To Search">   
+          <input  type="search" name="search"  aria-describedby="search-text" [(ngModel)]="searchText" placeholder="Enter text to search" 
+          autofocus>
+            <ul class="list-group list-group-flush" *ngIf= "searchText">
+              <li class="list-group-item" *ngFor="let c of products | appFilter: searchText" >
+                <a style="display:-webkit-inline-flex;"(click)="onSelect(c)">{{c}}</a> 
+              </li>
+            </ul>
+          </form>
+        <li><a [routerLink]="['/logout']" (click)="logoutUser()" style="color: white;"><span class="glyphicon glyphicon-log-out" ></span></a></li>
+      
+        <!--<li><a [routerLink]="['/sellerlogin']" style="color: white;"><span class="glyphicon glyphicon-user">sellerLogin</span></a></li>  -->
+      </ul>
+    </div>
+
+    
+    <!--seller nav-->
+    <div class="container-fluid" *ngIf="(userService.sellerauthenticated$ | async) === false">
+      <div class="navbar-header"> </div>
+      <ul class="nav navbar-nav">
+        <!--home-->
+        <li><a [routerLink]="['/seller']" style="color: white;"><span class="glyphicon glyphicon-home"></span> HOME</a></li>
+        <!--profile-->
+        <li ><a [routerLink]="['/sellerprofile']" style="color: white;"><span class="glyphicon glyphicon-user" ></span> PROFILE</a></li>
+        <!--my products-->
+        <li ><a [routerLink]="['/sellerproducts']" style="color: white;"><span class="glyphicon glyphicon-briefcase" ></span> MY PRODUCTS</a></li>
+        <li ><a [routerLink]="['/addproducts']" style="color: white;"><span class="glyphicon glyphicon-plus" ></span> ADD PRODUCTS</a></li>
+        <!--search-->
+        <li ><a [routerLink]="['/logout']" (click)="logoutUser()" style="color: white;"><span class="glyphicon glyphicon-log-out" ></span> LOGOUT</a></li>
+        <!--<li><a [routerLink]="['/sellerlogin']" style="color: white;"><span class="glyphicon glyphicon-user">sellerLogin</span></a></li>  -->
+      </ul>
+    </div>
+
+
+    <!--admin-->
+    <div class="container-fluid" *ngIf="(userService.adminauthenticated$ | async) === false">
+      <div class="navbar-header"> </div>
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/showallbuyerdetails']" style="color: white;">Buyer Details</a></li>
+        <li><a [routerLink]="['/showallsellerdetails']" style="color: white;">seller Details</a></li>
+        <li><a [routerLink]="['/showallproductdetails']" style="color: white; font-size: medium;"> My Product Details</a></li>
+        <li><a href="#" style="color: white;  font-size: medium;">Order Details</a></li>
+        <li><a href="#" style="color: white;  font-size: medium;">Order Product</a></li>
+        <li><a href="#" style="color: white;  font-size: medium;">Seller Product Details</a></li>
+        <li><a [routerLink]="['/adminproduct']"  style="color: white;  font-size: medium;">Add Products</a></li>
+        
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+        <li><a [routerLink]="['/logout']" (click)="logoutUser()" style="color: white;"><span class="glyphicon glyphicon-log-out"></span></a></li>
+       </ul>
+    </div>
+
+  </nav>
+</div>
+  <!--
+  <button (click)="userService.authenticate()">Authenticate</button>
+  <button (click)="userService.deauthenticate()">Deauthenticate</button>
+  -->

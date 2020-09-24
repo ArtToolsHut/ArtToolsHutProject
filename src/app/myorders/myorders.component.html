@@ -1,0 +1,78 @@
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    
+    
+   
+
+
+    <div class="container">
+        <table id="cart" class="table table-hover table-condensed">
+            <thead>
+              <h2 style ="text-align: center">MY ORDERS</h2>
+               
+                <tr> 
+                                <th style="width:50%; font-size: medium ;">Product</th>
+                                <th style="width:10%; font-size: medium ; ">Price</th>
+                                <th style="width:8%; font-size: medium ;">Quantity</th>
+                                <th style="width:22%; font-size: medium ;" class="text-center">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <!--added new <tr>-->
+
+                               
+                            <ng-container *ngFor="let orderId of orderIdList">
+                               OD444343{{orderId}}
+                                <ng-container *ngFor="let productList of productsList2">
+                                    <tr *ngIf="orderId ===productList.orderId"> 
+                                        <td data-th="Product"> 
+                                   
+                                    <div class="row">
+                                        <div class="col-sm-2 hidden-xs"><img src="http://localhost:8080/RESTAPI2018/Images/{{productList.product.imageName}}" alt="..." class="img-responsive"/></div>
+                                        <div class="col-sm-10">
+                                            <h4 class="nomargin">{{productList.product.productName}}</h4>
+                                            <p>{{productList.product.productBrand}}</p>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td data-th="Price">{{productList.product.productPrice}}</td>
+                                <td data-th="Quantity">{{productList.quantity}}</td>
+                                <td data-th="Subtotal" class="text-center">{{productList.product.productPrice * productList.quantity}}</td>
+
+                            
+                           
+                                
+                    </tr>
+                </ng-container>
+                </ng-container>
+                        </tbody>
+      
+                    </table>
+                
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
+
+
+
+
+
+

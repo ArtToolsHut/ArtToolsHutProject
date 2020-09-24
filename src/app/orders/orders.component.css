@@ -1,0 +1,109 @@
+
+body {
+    background: linear-gradient(110deg, #BBDEFB 60%, #42A5F5 60%)
+}
+
+.shop {
+    font-size: 10px
+}
+
+.space {
+    letter-spacing: 0.8px !important
+}
+
+.second a:hover {
+    color: rgb(92, 92, 92)
+}
+
+.active-2 {
+    color: rgb(92, 92, 92)
+}
+
+
+.first {
+    background-color: white
+}
+
+a {
+    text-decoration: none !important;
+    color: #aaa
+}
+
+.btn-lg,
+.form-control-sm:focus,
+.form-control-sm:active,
+a:focus,
+a:active {
+    outline: none !important;
+    box-shadow: none !important
+}
+
+.form-control-sm:focus {
+    border: 1.5px solid #4bb8a9
+}
+
+.btn-group-lg>.btn,
+.btn-lg {
+    padding: .5rem 0.1rem;
+    font-size: 1rem;
+    border-radius: 0;
+    color: white !important;
+    background-color: #4bb8a9;
+    height: 2.8rem !important;
+    border-radius: 0.2rem !important
+}
+
+.btn-group-lg>.btn:hover,
+.btn-lg:hover {
+    background-color: #26A69A
+}
+
+.btn-outline-primary {
+    background-color: #fff !important;
+    color: #4bb8a9 !important;
+    border-radius: 0.2rem !important;
+    border: 1px solid #4bb8a9
+}
+
+.btn-outline-primary:hover {
+    background-color: #4bb8a9 !important;
+    color: #fff !important;
+    border: 1px solid #4bb8a9
+}
+
+.card-2 {
+    margin-top: 30px !important
+}
+.card-header {
+    width: 500px;
+    height: 650px;
+    background-color:#FFE4E1;
+    border-bottom: 0px solid #aaaa !important
+}
+
+p {
+    font-size: 13px
+}
+
+.small {
+    font-size: 9px !important
+}
+
+.form-control-sm {
+    height: calc(2.2em + .5rem + 2px);
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: 0
+}
+
+.cursor-pointer {
+    cursor: pointer
+}
+
+
+
+@media (max-width: 767px) {
+    .breadcrumb-item+.breadcrumb-item {
+        padding-left: 0
+    }
+}

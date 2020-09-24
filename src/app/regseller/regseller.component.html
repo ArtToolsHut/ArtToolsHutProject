@@ -1,0 +1,362 @@
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    </head>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+            <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+            <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+            
+            
+                <!-- Standard Meta -->
+                <meta charset="utf-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+            
+                <!-- Site Properties -->
+                
+            
+                <!-- Stylesheets -->
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+            </head>
+    <body>
+        <br>
+        <br>
+        
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+
+    <head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    </head>
+    <!--
+        <div class="container">
+          <div class="row">
+              <div class="col-md-6 offset-md-3">
+                  <h2> New User Registration</h2>
+                  <hr>
+                  <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+    
+                      <div class="form-group">
+                          <label>Name</label>
+                          <input type="text" formControlName="sellerName" [(ngModel)]='sellerdetails.sellerName' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sellerName.errors }" placeholder="John Doe"/>
+                          <div *ngIf="submitted && f.sellerName.errors" class="invalid-feedback">
+                              <div *ngIf="f.sellerName.errors.required">Name is required</div>
+                          </div>
+                      </div>
+                      
+                      <div class="form-group">
+                          <label>Email</label>
+                          <input type="text" formControlName="sellerEmail" [(ngModel)]='sellerdetails.sellerEmail' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sellerEmail.errors }" placeholder="you@example.com"/>
+                          <div *ngIf="submitted && f.sellerEmail.errors" class="invalid-feedback">
+                              <div *ngIf="f.sellerEmail.errors.required">Email is required</div>
+                              <div *ngIf="f.sellerEmail.errors.email">Email must be a valid email address</div>
+                          </div>
+                      </div> 
+    
+                      <div class="form-group">
+                          <label>Mobile No.</label>
+                          <input type="number" formControlName="mobileNo" [(ngModel)]='sellerdetails.mobileNo' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }" placeholder="947646453"/>
+                          <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback">
+                              <div *ngIf="f.mobileNo.errors.required">Mobile Number is required</div>
+                              <div *ngIf="f.mobileNo.errors.pattern">Enter 10 digit valid Mobile Number</div>
+                              
+                          </div>
+                      </div>
+    
+                      <div class="form-group">
+                        <label>Street</label>
+                        <input type="text" formControlName="street" [(ngModel)]='sellerdetails.address.street' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.street.errors }" placeholder="Street"/>
+                        <div *ngIf="submitted && f.street.errors" class="invalid-feedback">
+                            <div *ngIf="f.street.errors.required">Street is required</div>
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" formControlName="city" [(ngModel)]='sellerdetails.address.city' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" placeholder="City"/>
+                        <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                            <div *ngIf="f.city.errors.required">City is required</div>
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label>State</label>
+                        <!--<input type="text" formControlName="state" [(ngModel)]='sellerdetails.address.state' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }" placeholder="State"/>
+                   
+                        <select formControlName="state" class="form-control" placeholder="State"  [(ngModel)]='sellerdetails.address.state' [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
+                            <option value="" selected="selected">select a state</option>
+                              <option value="AP">Andhra Pradesh</option>
+                              <option value="AP">Arunachal Pradesh</option>
+                              <option value="AS">Assam</option>
+                              <option value="IR">Bihar</option>
+                              <option value="USA">Chhattisgarh</option>
+                              <option value="IR">Goa</option>
+                              <option value="USA">Gujarat</option>
+                              <option value="IR">Haryana</option>
+                              <option value="USA">Himachal Pradesh</option>
+                              <option value="IR">Jharkhand</option>
+                              <option value="USA">Karnataka</option>
+                              <option value="IR">Kerala</option>
+                              <option value="USA">Madhya Pradesh</option>
+                              <option value="IR">Maharashtra</option>
+                              <option value="USA">Manipur</option>
+                              <option value="IR">Meghalaya</option>
+                              <option value="USA">Mizoram</option>
+                              <option value="IR">Nagaland</option>
+                              <option value="USA">Odisha</option>
+                              <option value="IR">Punjab</option>
+                              <option value="USA">Rajasthan</option>
+                              <option value="IR">Sikkim</option>
+                              <option value="USA">Tamil Nadu</option>
+                              <option value="IR">Telangana</option>
+                              <option value="USA">Tripura</option>
+                              <option value="IR">Uttar Pradesh</option>
+                              <option value="USA">Uttarakhand</option>
+                              <option value="USA">West Bengal</option>
+                            </select>
+                            
+                        <input type="text" formControlName="state" [(ngModel)]='sellerdetails.address.state' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }" placeholder="State"/>
+                        <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                            <div *ngIf="f.state.errors.required">State is required</div>
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label>Country</label>
+                        <input type="text" formControlName="country" [(ngModel)]='sellerdetails.address.country' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }" placeholder="Country"/>
+                        <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                            <div *ngIf="f.country.errors.required">Country is required</div>
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label>PinCode</label>
+                        <input type="number" formControlName="pincode" [(ngModel)]='sellerdetails.address.pincode' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pincode.errors }" placeholder="pincode"/>
+                        <div *ngIf="submitted && f.pincode.errors" class="invalid-feedback">
+                            <div *ngIf="f.pincode.errors.required">Mobile Number is required</div>
+                            
+                        </div>
+                    </div>
+    
+                      <div class="form-group">
+                          <label>Username</label>
+                          <input type="text" formControlName="userName"  [(ngModel)]='sellerdetails.userName' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" placeholder="Username"/>
+                          <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+                              <div *ngIf="f.userName.errors.required">Username is required</div>
+                              <div *ngIf="f.userName.errors.minlength">Username must be atleast 4 characters</div>
+                          </div>
+                      </div>
+    
+                      <div class="form-group">
+                          <label>Password</label>
+                          <input type="password" formControlName="password" [(ngModel)]='sellerdetails.password' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="password"/>
+                          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                              <div *ngIf="f.password.errors.required">Password is required</div>
+                              <div *ngIf="f.password.errors.minlength">Password must be atleast 6 characters</div>
+                          </div>
+                      </div>
+    
+                      
+    
+                      <div class="form-group">
+                          <button class="btn btn-success" (click)="getMobileNo(sellerdetails)"><i class="fa fa-user-plus"></i> Register</button>                       
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+    
+    
+    -->
+        
+        
+        
+        
+           
+        
+        
+        <title>Registration</title>
+        
+            <div class="container">
+                
+                <form class="form-horizontal"  [formGroup]="registerForm"   (ngSubmit)="onSubmit(registerForm.value)"> 
+                    
+            <fieldset>
+            
+            <!-- Form Name -->
+            
+            
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="sellerName"></label>  
+                <div class="input-group col-md-4">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                    <input type="text" formControlName="sellerName" [(ngModel)]='sellerdetails.sellerName' class="form-control input-md" [ngClass]="{ 'is-invalid': submitted && f.sellerName.errors }" placeholder="John Doe"/>
+                          <div *ngIf="submitted && f.sellerName.errors" class="invalid-feedback">
+                              <div *ngIf="f.sellerName.errors.required">Name is required</div>
+                          </div>
+                </div>
+              </div>
+        
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="sellerEmail"></label>  
+                <div class="input-group col-md-4">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                    <input type="text" formControlName="sellerEmail" [(ngModel)]='sellerdetails.sellerEmail' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sellerEmail.errors }" placeholder="you@example.com"/>
+                          <div *ngIf="submitted && f.sellerEmail.errors" class="invalid-feedback">
+                              <div *ngIf="f.sellerEmail.errors.required">Email is required</div>
+                              <div *ngIf="f.sellerEmail.errors.email">Email must be a valid email address</div>
+                          </div>
+                </div>
+              </div>
+        
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="mobileNo"></label>  
+                <div class="input-group col-md-4">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-phone"></i></div>
+                    <input type="number" formControlName="mobileNo" [(ngModel)]='sellerdetails.mobileNo' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }" placeholder="947646453"/>
+                          <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback">
+                              <div *ngIf="f.mobileNo.errors.required">Mobile Number is required</div>
+                              <div *ngIf="f.mobileNo.errors.pattern">Enter 10 digit valid Mobile Number</div>
+                              
+                          </div>
+                </div>
+              </div>
+        
+            <!-- Text input-->
+            
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="street"></label>  
+              <div class="input-group col-md-4">
+                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-home"></i></div>
+                <input type="text" formControlName="street" [(ngModel)]='sellerdetails.address.street' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.street.errors }" placeholder="Street"/>
+                <div *ngIf="submitted && f.street.errors" class="invalid-feedback">
+                    <div *ngIf="f.street.errors.required">Street is required</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="city"></label>  
+              <div class="col-sm-2">
+                <input type="text" formControlName="city" [(ngModel)]='sellerdetails.address.city' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" placeholder="City"/>
+                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                    <div *ngIf="f.city.errors.required">City is required</div>
+                </div>  
+              </div>
+              
+              <div class="col-sm-2">
+                <input type="number" formControlName="pincode" [(ngModel)]='sellerdetails.address.pincode' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pincode.errors }" placeholder="pincode"/>
+                        <div *ngIf="submitted && f.pincode.errors" class="invalid-feedback">
+                            <div *ngIf="f.pincode.errors.required">Mobile Number is required</div>
+                            
+                        </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="state"></label>
+              <div class="col-md-2" >
+                
+               <select id="state" formControlName="pincode" class="form-control" placeholder="State"  [(ngModel)]='sellerdetails.address.state' style="width:30px;" style="height: 35px;">
+                <option value="" selected="selected">select a state</option>
+                  <option value="AP">Andhra Pradesh</option>
+                  <option value="AP">Arunachal Pradesh</option>
+                  <option value="AS">Assam</option>
+                  <option value="IR">Bihar</option>
+                  <option value="USA">Chhattisgarh</option>
+                  <option value="IR">Goa</option>
+                  <option value="USA">Gujarat</option>
+                  <option value="IR">Haryana</option>
+                  <option value="USA">Himachal Pradesh</option>
+                  <option value="IR">Jharkhand</option>
+                  <option value="USA">Karnataka</option>
+                  <option value="IR">Kerala</option>
+                  <option value="USA">Madhya Pradesh</option>
+                  <option value="IR">Maharashtra</option>
+                  <option value="USA">Manipur</option>
+                  <option value="IR">Meghalaya</option>
+                  <option value="USA">Mizoram</option>
+                  <option value="IR">Nagaland</option>
+                  <option value="USA">Odisha</option>
+                  <option value="IR">Punjab</option>
+                  <option value="USA">Rajasthan</option>
+                  <option value="IR">Sikkim</option>
+                  <option value="USA">Tamil Nadu</option>
+                  <option value="IR">Telangana</option>
+                  <option value="USA">Tripura</option>
+                  <option value="IR">Uttar Pradesh</option>
+                  <option value="USA">Uttarakhand</option>
+                  <option value="USA">West Bengal</option>
+                </select>
+              
+              </div>
+        
+              
+              <div class="col-md-2">
+                <select id="country" formControlName="country" class="form-control" [(ngModel)]='sellerdetails.address.country' style="width:30px;" style="height: 35px;"> 
+                    
+                  <option value="IR">India</option>
+                </select>
+              </div>
+            
+              
+        
+            </div>
+            
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="userName"></label>  
+                <div class="input-group col-md-4">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                    <input type="text" formControlName="userName"  [(ngModel)]='sellerdetails.userName' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" placeholder="Username"/>
+                    <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+                        <div *ngIf="f.userName.errors.required">Username is required</div>
+                        <div *ngIf="f.userName.errors.minlength">Username must be atleast 4 characters</div>
+                    </div>
+                </div>
+              </div>
+        
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="password"></label>  
+                <div class="input-group col-md-4">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                    <input type="password" formControlName="password" [(ngModel)]='sellerdetails.password' class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="password"/>
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be atleast 6 characters</div>
+                    </div>
+                </div>
+              </div>
+           
+            </fieldset>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-success" ><i class="fa fa-user-plus"></i> Register</button>
+                </div>
+            </div>
+
+            </form>
+            </div>
+        
+        
+            </body>
+
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>

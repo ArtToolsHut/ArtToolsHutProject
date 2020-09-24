@@ -1,0 +1,43 @@
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    </head>
+    
+    <section class="login-block">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-4 login-sec">
+                <h2 class="text-center">Login Now</h2>
+                <form #sellerLoginForm="ngForm" class="form-group" (ngSubmit)="validateSeller(sellerLoginForm.value)" novalidate>
+      <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon"> <i class="glyphicon glyphicon-user "></i> </span>
+            <input type="text" class="form-control" name="emailId" ngModel required  #userName="ngModel" placeholder="Email Id"  style="font-size: small;"><br />
+            </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i> </span>    
+        <input type="password" class="form-control" name="password" ngModel required #password="ngModel" placeholder="password" style="font-size: small;"><br />
+        </div>
+      </div>
+      
+        <button class="btn btn-primary" [disabled]="!sellerLoginForm.valid" style="width: 70px; font-size: small;">Login</button><br /><br />
+        <h4>Don't have an account?<a [routerLink]="['/regseller']">Register here</a></h4>                
+    </form>
+            </div>
+            <div class="col-md-8 banner-sec">    
+        <div >
+          <img class="d-block img-fluid" src="https://rustiqued.com/wp-content/uploads/2019/04/selling-handmade-items-online.jpg" >
+        </div>
+                </div>	  
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    </section>

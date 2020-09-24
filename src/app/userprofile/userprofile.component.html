@@ -1,0 +1,227 @@
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+
+<!--Edit PopUp 
+<div class="container">
+    <div class="modal fade" id="empModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <h4 class="modal-title">Update Form</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                        Enter Name: <input type="text" name="buyerName" [(ngModel)]="editObject.buyerName"
+                            class="form-control"><br />
+                        Enter Email: <input type="text" name="buyerEmail" [(ngModel)]="editObject.buyerEmail"
+                            class="form-control"><br />
+                        Enter mobileNo: <input type="text" name="mobileno" [(ngModel)]="editObject.mobileNo"
+                            class="form-control"><br />
+                        Enter User Name: <input type="text" name="userName" [(ngModel)]="editObject.userName"
+                            class="form-control"><br />    
+                        Enter New Password: <input type="text" name="password" [(ngModel)]="editObject.password"
+                            class="form-control"><br />
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" (click)="updateEmp()" data-dismiss="modal">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container emp-profile">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img src="http://localhost:8080/RESTAPI2018/Images/{{buyer.buyerImage}}"  style="width:250px;height:200px"> 
+                        
+                        <div class="col-md-4">
+                            <div class="container">
+                                <div class="button-wrap">
+                                  <label class="button" for="upload">Upload File</label>
+                                  <input id="upload" type="file" #profileImage accept="image/*" (change)="handleFileInput($event.target.files)">
+                                </div>
+                              </div>
+                            <br>   
+                           
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="profile-head">
+                        <h1 >
+                            {{buyer.buyerName}}
+                        </h1>
+                        <br/>
+                        <div class="tab-content profile-tab" id="myTabContent">
+                         
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>USER NAME</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p> {{buyer.userName}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>NAME</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p> {{buyer.buyerName}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>EMAIL</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p> {{buyer.buyerEmail}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>PHONE</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{buyer.mobileNo}}</p>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="row">
+                                            <button (click)="showEditPopup(buyer)" class="btn btn-primary">EDIT PROFILE</button>    
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-work">
+                        <button [routerLink]="['/logout']" (click)="logoutUser()" type="button" class="btn btn-danger btn-sm">LOGOUT</button>
+                        <button type="button" class="btn btn-success btn-sm">MY ORDERS</button><br/>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    
+                </div>
+            </div>
+        </form>           
+    </div>
+
+-->
+
+
+
+<body>
+<div class="container">
+        <div class="modal fade" id="empModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                        Enter Name: <input type="text" name="buyerName" [(ngModel)]="editObject.buyerName"
+                            class="form-control"><br />
+                        Enter Email: <input type="text" name="buyerEmail" [(ngModel)]="editObject.buyerEmail"
+                            class="form-control"><br />
+                        Enter mobileNo: <input type="text" name="mobileno" [(ngModel)]="editObject.mobileNo"
+                            class="form-control"><br />
+                        Enter User Name: <input type="text" name="userName" [(ngModel)]="editObject.userName"
+                            class="form-control"><br />    
+                        Enter New Password: <input type="password" name="password" [(ngModel)]="editObject.password"
+                            class="form-control"><br />
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" (click)="updateEmp()" data-dismiss="modal">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="container emp-profile">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="http://localhost:8080/RESTAPI2018/Images/{{buyer.buyerImage}}" alt=""/>
+                    <div class="file btn btn-lg btn-primary">
+                        Change Photo
+                        <input id="upload" type="file" #profileImage accept="image/*" (change)="handleFileInput($event.target.files)">
+                    </div>
+                </div>
+                <div class="buttons">
+                <button  type="button" class="btn btn-success"[routerLink]="['/myorders']" >MyOrders</button>
+                <button class="btn btn-danger" [routerLink]="['/wishlist/:productId']">Wishlist</button>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="profile-head">
+                        <h5>{{buyer.buyerName}}</h5>
+                        <hr class="" style="height:1px;border-width:0;color:gray;background-color:gray">
+                </div>
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{buyer.buyerName}}</p>
+                                    </div>
+                                </div>
+    
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{buyer.buyerEmail}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Phone</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>{{buyer.mobileNo}}</p>
+                                    </div>
+                                </div>
+                                
+                    </div>
+                    <br/>
+                     <input type="submit" (click)="showEditPopup(buyer)" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                </div>
+            </div>
+            
+            <div class="col-md-2">
+               
+            </div>
+        </div>
+        
+    </form>           
+</div>
+</div>
+<br/>
+<br/>
+
+
+</body>

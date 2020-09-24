@@ -1,0 +1,154 @@
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+    <div class="container mt-5 mb-5">
+        <div class="card">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10">
+                <div class="receipt bg-white p-3 rounded"><img [src]="images.image" width="120">
+                    <h4 class="mt-2 mb-3 fs-22">Your order is confirmed!</h4>
+                    <h6 class="name fs-18">Hello {{address.name}},</h6><span class="fs-14 text-black-50">your order has been confirmed and will be shipped in two days</span>
+                    <hr>
+                    <div class="d-flex flex-row justify-content-between align-items-center order-details">
+                        <div><span class="d-block fs-12">Order date:</span><span class="font-weight-bold fs-16">{{orderDate| date}}</span></div>
+                        <div><span class="d-block fs-12">Order number:</span><span class="font-weight-bold fs-16">OD444343{{orderId}}</span></div>
+                        <div><span class="d-block fs-12">Payment method:</span><span class="font-weight-bold fs-16">Cash on Delivery</span></div>
+                        <div><span class="d-block fs-12">Shipping Address:</span><span class="font-weight-bold fs-16 text-success"><p class="mb-1">{{address.city}}</p></span></div>
+                    </div>
+                    <hr>
+                    <div *ngFor="let cart of cartItems">
+                    <div class="d-flex justify-content-between align-items-center product-details">
+                        <div class="d-flex flex-row product-name-image"><img class="rounded" src="http://localhost:8080/RESTAPI2018/Images/{{cart.product.imageName}}" width="80">
+                            <div class="d-flex flex-column justify-content-between ml-2">
+                                <div><span class="d-block fs-16 font-weight-bold p-name"> {{cart.product.productName}}</span></div><span class="fs-16">Qty: {{cart.productQuantity}}pcs</span>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <h4>Rs. {{cart.productQuantity * cart.product.productPrice}}</h4>
+                        </div>
+                        
+                    </div>
+                    <hr>
+                    </div>
+                    <div class="mt-5 amount row">
+                        <div class="d-flex justify-content-center col-md-6"></div>
+                        <div class="col-md-6">
+                            <div class="billing ">
+                                <div class="d-flex fs-16 justify-content-between"><span>Subtotal</span><span class="font-weight-bold">Rs. {{total}}</span></div>
+                                <div class="d-flex fs-16 justify-content-between mt-2"><span>Shipping Fee</span><span class="font-weight-bold">{{charges}}</span></div>
+                
+                                <hr>
+                                <div class="d-flex fs-18 justify-content-between mt-1"><span class="font-weight-bold">Total</span><span class="font-weight-bold text-success">Rs. {{totalAmount}}</span></div>
+                            </div>
+                        </div>
+                    </div><span class="d-block fs-18 ">Expected delivery date</span><span class="font-weight-bold fs-16 text-success">14 September 2020</span><span class="d-block mt-3 text-black-50 ">We will be sending a shipping confirmation email when the item is shipped!</span>
+                    <hr>
+                    <div class="d-flex justify-content-between align-items-center footer">
+                        <div class="thanks fs-18"><span class="d-block font-weight-bold">Thanks for shopping</span><span class="fs-16">ArtToolsHut team</span></div>
+                        <div class="d-flex fs-16 flex-column justify-content-end align-items-end"><span class="d-block font-weight-bold">Need Help?</span><span>Call - 9381224500</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+
+
+<!--<div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body p-0">
+                        <div class="row p-5">
+                            <div class="col-md-6">
+                                <img [src]="images.image" style="width: 150px; height: 70px;">
+                            </div>
+    
+                            <div class="col-md-6 text-right">
+                                <p class="font-weight-bold mb-1">OrderId: {{orderId}} </p>
+                                <p class="text-muted">14 Aug 2020 </p>
+                            </div>
+                        </div>
+    
+                        <hr class="my-5">
+    
+                        <div class="row pb-5 p-5">
+                            <div class="col-md-6">
+                                <p class="font-weight-bold mb-4">Customer Information</p>
+                                <p class="mb-1">{{address.name}}</p>
+                                <p class="mb-1">{{address.street}}</p>
+                                <p class="mb-1">{{address.city}}</p>
+                                <p class="mb-1">{{address.state}}</p>
+                                <p class="mb-1">{{address.pincode}}</p>
+                                <p class="mb-1">{{address.country}}</p>
+                            </div>
+    
+                            <div class="col-md-6 text-right">
+                                <p class="font-weight-bold mb-4">Payment Details</p>
+                                <p class="mb-1"><span class="text-muted">Payment Type: </span>COD</p>
+                                <p class="mb-1"><span class="text-muted">Name: </span> {{address.name}}</p>
+                            </div>
+                        </div>
+    
+                        <div class="row p-5">
+                            <div class="col-md-12">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-0 text-uppercase small font-weight-bold">ID</th>
+                                            <th class="border-0 text-uppercase small font-weight-bold">Item</th>
+                                            <th class="border-0 text-uppercase small font-weight-bold">Quantity</th>
+                                            <th class="border-0 text-uppercase small font-weight-bold">Unit Cost</th>
+                                            <th class="border-0 text-uppercase small font-weight-bold">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let cart of cartItems">
+                                            <td>1</td>
+                                            <td>{{cart.product.productName}}</td>
+                                            <td>{{cart.productQuantity}}</td>
+                                            <td>{{cart.product.productPrice}}</td>
+                                            <td>Rs. {{cart.productQuantity * cart.product.productPrice}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td >
+                                            <p>
+                                                <strong>Total Amount: </strong>
+                                            </p>
+                                           
+                                            </td>
+                                            <td>
+                                            <p>
+                                                <strong><i class="fa fa-inr"></i>{{total}}</strong>
+                                            </p>
+                                           
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+    
+                        <div class="d-flex flex-row-reverse bg-dark text-white p-4">                        
+                            <div class="py-3 px-5 text-right">
+                                <div class="mb-2 font-weight-bold">Total</div>
+                                <div class="h2 font-weight-light">{{total}}</div>
+                            </div>   
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-light mt-5 mb-5 text-center small">by : <a class="text-light" target="_blank" href="http://totoprayogo.com">totoprayogo.com</a></div>
+    
+    </div>-->

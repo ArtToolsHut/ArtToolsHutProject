@@ -1,0 +1,73 @@
+
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Detail</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+</head>
+
+
+<head>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+
+
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let product of products">
+      
+          <div class="wrapper" *ngIf="(product.status === 'Accepted' && product.availability != 0)">
+            <div class="container">
+                <div class="row g-1">
+                    <div class="col-md-3">
+                        <div class="card p-3">
+                            <div class="text-center"> <img src="http://localhost:8080/RESTAPI2018/Images/{{product.imageName}}" height="200px" width="200px"> </div>
+                            <hr>
+                            <div class="product-details"> <span class="font-weight-bold d-block"> {{product.productPrice | currency: 'Rs.'}}</span> <span>{{product.productName}}</span>
+                                <div class="buttons d-flex flex-row">
+                                  <button (click)="onSelect(product)" class="btn btn-primary cart-button btn-block" >SHOP NOW</button>
+                                  <button (click)="addToWish(product)" class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                                  
+                                   
+                                </div>
+                                <div class="weight"> <small>{{product.productBrand}}</small> </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    

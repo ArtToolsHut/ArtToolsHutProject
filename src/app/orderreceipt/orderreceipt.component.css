@@ -1,0 +1,33 @@
+body {
+    background-color: #eee
+}
+
+.fs-20 {
+    font-size: 20px
+}
+
+.fs-16 {
+    font-size: 16px
+}
+.fs-22{
+    font-size: 22px;
+}
+.fs-14{
+    font-size: 14px;
+}
+.fs-12{
+    font-size: 12px;
+}
+.fs-24{
+    font-size: 24px;
+}
+.fs-18{
+    font-size: 18px;
+}
+.name {
+    margin-bottom: -2px
+}
+
+.product-details {
+    margin-top: 13px
+}

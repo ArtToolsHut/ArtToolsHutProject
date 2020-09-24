@@ -1,0 +1,317 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<head>  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Detail</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+</head>
+
+
+<head>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+
+
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<!--LOGO-->
+
+<head>
+    <title>ArtToolsHut</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  
+  
+    
+  <!--MAIN CAROUSEL-->
+  <head>
+    <title>Carousel</title>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img {
+      
+      width: 200%;
+      margin: 0px ;
+    }
+    </style>
+  </head>
+  <body>
+  
+  <div class="container"  style="width: 100% ;">
+    <br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+  
+      
+
+      <div class="carousel-inner" role="listbox">
+  
+        <div class="item active">
+          <a [routerLink]= "['/productbybrand', 'Handmade']">
+          <img src="https://fattenthewallet.com/wp-content/uploads/2020/04/places-to-sell-handmade-crafts-online.jpg" alt="Chicago"  >
+          <div class="center" align = right>
+            <h1><b>Handmade </b></h1>
+            <h4><i>Something handmade is much more meaningful.</i></h4>          
+        </div>
+
+      </a>
+        </div>
+  
+        <div class="item">
+          <a [routerLink]= "['/productbytype', 'Stationery']">
+          <img [src]="images.image2" alt="losangeles">
+          <div class="center" align = right>
+            <h1><b>Arts </b></h1>
+            <h4><i>Add Colors to your life..</i></h4>  
+        </div>
+
+      </a>
+
+        </div>
+      
+        <div class="item">
+          <a [routerLink]= "['/productbytype', 'Gifts']">
+          <img [src]="images.image1" alt="office desk" >
+          <div class="center" align = right>
+            <h1><b>Gifts </b></h1>
+            <h4><i>Gift your loved once with love..</i></h4>
+        </div>
+
+      </a>
+        </div>
+  
+      </div>
+  
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  <br>
+  <br>
+  
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-12">
+          <h1 class="page-header"><b><i>Shop by Brands   </i></b>
+            <button class="btn btn-info row-btn page-header-right" (click)="onClickBrand()"> VIEW ALL</button>
+          </h1>
+      </div>
+    </div>
+  
+<div class="container">
+    <!-- Projects Row -->
+    <section class="shopbybrand">
+    <div class="row ">
+      
+        <div class="col-md-3 col-sm-6 col-xs-12 portfolio-item">
+         
+            <a [routerLink]= "['/productbybrand', 'Classmate']">
+                <img class="img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Classmate_Logo.PNG" alt="">
+            </a>
+          
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 portfolio-item">
+          <a [routerLink]= "['/productbybrand', 'Apsara']">
+                <img class="img-responsive" src="https://tse3.mm.bing.net/th?id=OIP.SPZte7QKZw8s-nbLaUdElwAAAA&pid=Api&P=0&w=304&h=96" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 portfolio-item">
+          <a [routerLink]= "['/productbybrand', 'Faber Castell']">
+                <img class="img-responsive" src="https://tse4.mm.bing.net/th?id=OIP.O4WQHXDDCxvTxHcueMEH0gHaCi&pid=Api&P=0&w=442&h=152" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12 portfolio-item">
+          <a [routerLink]= "['/productbybrand', 'Camlin']">
+                <img class="img-responsive" src="https://lh4.googleusercontent.com/-Ea9sDk-TEJs/T3Ktd11SO-I/AAAAAAAAAeo/JsXhHtzoJYg/s800/camlin_logo.137193143_std.jpg" alt="">
+            </a>
+        </div>
+      
+    </div>
+  </section>
+  
+    <div class="row">
+      <div class="col-lg-12">
+          <h1 class="page-header"><b><i>Shop by Categories </i></b>
+            <button class="btn btn-info row-btn page-header-right" (click)="onClick()"> VIEW ALL</button>
+          </h1>
+          </div>  
+    </div>
+
+  <!--
+    <div class="centered" align = center>
+                  <h4><i><b>Rakhis</b></i></h4>
+                </div>
+  -->
+    
+    <!-- Projects Row -->
+    <section class="shopbybrand">
+    <div class="row">
+        <div class="col-md-3 portfolio-item">
+          <a [routerLink]= "['/productbytype', 'Rakhis']">
+                <img class="img-responsive" src="https://shaadiwish.com/blog/wp-content/uploads/2020/07/online-rakhi-shopping.jpg" alt="">
+                <div class="centered" align = center>
+                  <h4><i><b>Rakhis</b></i></h4>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 portfolio-item">
+          <a [routerLink]= "['/productbytype', 'Notebook']">
+                <img class="img-responsive" src="https://i.pinimg.com/originals/68/58/d5/6858d593fb9f01f1a31aa01ad590b3ac.jpg" alt="">
+                <div class="centered" align = center>
+                  <h4><i><b>Notebook</b></i></h4>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 portfolio-item">
+          <a [routerLink]= "['/productbytype', 'Gifts']">
+                <img class="img-responsive" src="https://images.shaadisaga.com/shaadisaga_production/photos/pictures/000/157/018/new_large/Mother's_Day.jpg?1502536366" alt="">
+                <div class="centered" align = center>
+                  <h4><i><b>Gifts</b></i></h4>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 portfolio-item">
+          <a [routerLink]= "['/productbytype', 'Stationery']">
+                <img class="img-responsive" src="https://ae01.alicdn.com/kf/HTB1SVy0NXXXXXbDXXXXq6xXFXXXY/10-Pcs-Kawaii-Cartoon-Colorful-Gel-Pen-Set-font-b-Cute-b-font-font-b-Korean.jpg" alt="">
+                <div class="centered" align = center>
+                  <h4><i><b>Stationery</b></i></h4>
+                </div>
+            </a>
+        </div>
+    </div>
+  </section>
+    <!-- /.row -->
+    <div class="row">
+      <div class="col-lg-12">
+          <h1 class="page-header"><b><i>Art Tools Hut specials    </i></b>
+            <button class="btn btn-info row-btn page-header-right" (click)="onClickSpecials()"> VIEW ALL</button>
+          </h1>
+      </div>
+    </div>
+
+    <!-- Projects Row -->
+    <section class="shopbybrand">
+    <div class="row">
+        <div class="col-md-3 portfolio-item">
+          <a [routerLink]= "['/productbybrand', 'Nirmal']">
+                <img class="img-responsive" src="https://www.artranked.com/images/b6/b675573063676a04b47205a7196341be.jpg" alt="">
+                <div class="centered" align = center>
+                  <h4><i><b>Nirmal Arts</b></i></h4>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 portfolio-item">
+           <a [routerLink]= "['/productbytype', 'Gifts']">
+                <img class="img-responsive" src="https://www.royalgifts.co.in/wp-content/uploads/2019/01/name-frame.jpg" alt="">
+                <div class="centered" align = center>
+                  <h4><i><b>Gifts</b></i></h4>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 portfolio-item">
+          <a [routerLink]= "['/productbybrand', 'Archies']">
+                <img class="img-responsive" src="https://static.archiesonline.com/public/images/product/medium/8907089649545%20(1).jpg" alt="">
+                <div class="centered" align = center>
+                  <h4><i><b>Archies</b></i></h4>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3 portfolio-item">
+          <a [routerLink]= "['/productbytype', 'Homedecor']">
+                <img class="img-responsive" src="https://ae01.alicdn.com/kf/HTB1ytICowLD8KJjSszeq6yGRpXa5/Cute-Girl-Glass-Bottles-with-Filter-Student-Bottle-Funny-Cartoon-Glass-Drinkware-Children-Travel-Water-Bottles.jpg_960x960.jpg" alt="">
+                <div class="centered" align = center>
+                  <h4><i><b>Homedecor</b></i></h4>
+                </div>           
+              </a>
+        </div>
+    </div>
+  </section>
+    
+</div>
+</div>
+
+
+
+<div class="row">
+  <div class="col-lg-12" style="margin-left: 260px;">
+      <h1 class="page-header"> <b><i>NEW ARRIVALS</i></b>
+      </h1>
+  </div>
+</div>
+
+
+
+
+<!--DISPLAY PRODUCTS   *ngIf="(product.status === 'Accepted')"   -->
+<div class="container" >
+  <div class="row">
+ 
+      <div class="col-md-3 col-sm-6" *ngFor="let product of products">
+           <div class="wrapper" *ngIf="(product.status === 'Accepted' && product.availability != 0)" >
+            <div class="container" >
+                <div class="row g-1">
+                    <div class="col-md-3" >
+                        <div class="card p-3">
+                            <div class="text-center"> <img src="http://localhost:8080/RESTAPI2018/Images/{{product.imageName}}" height="200px" width="200px"> </div>
+                            <hr>
+                            <div class="product-details"> <span class="font-weight-bold d-block"> {{product.productPrice | currency: 'Rs.'}}</span> <span>{{product.productName}}</span>
+                                <div class="buttons d-flex flex-row">
+                                  <button (click)="onSelect(product)" class="btn btn-primary cart-button btn-block" >SHOP NOW</button>
+                                  <button (click)="addToWish(product)" class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+                                  
+                                   
+                                </div>
+                                <div class="weight"> <small>{{product.productBrand}}</small> </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    </div>
+    </div>
+    <br/>
+    <br/>
+
+
+  <button class="clickbutton" *ngIf="isShow" (click)="gotoTop()" title="Go to top">👆</button>

@@ -1,0 +1,26 @@
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+.login-block{
+    background: #686464;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #FFB88C, #666262);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #f7f6f5, #d6d3d3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+float:center;
+width:100%;
+padding-top: 40px;
+padding-bottom: 205px;
+}
+
+.banner-sec{background:url()  no-repeat left bottom; background-size:cover;width: 720px; min-height:422px; border-radius: 0 10px 10px 0; padding:0;}
+.container{background:#fff; border-radius: 10px; box-shadow:15px 20px 0px rgba(0,0,0,0.1);}
+.carousel-inner{border-radius:0 10px 10px 0;}
+.carousel-caption{text-align:left; left:5%;}
+.login-sec{padding: 50px 40px; position:relative;}
+.login-sec .copy-text{position: absolute ; width:70%; bottom:20px; font-size:20px; text-align:center;}
+.login-sec .copy-text i{color:#FEB58A;}
+.login-sec .copy-text a{color:#E36262;}
+.login-sec h2{margin-bottom:20px; font-weight:800; font-size:30px; color: #807a7a;}
+.login-sec h2:after{content:" "; width:100px; height:5px; background:#FEB58A; display:block; margin-top:20px; border-radius:3px; margin-left:auto;margin-right:auto}
+.btn-login{background: #807a7a; color:#fff; font-weight:1000; width: 80%; }
+.banner-text{width:70%; position:absolute; bottom:40px; padding-left:20px;}
+.banner-text h2{color:#fff; font-weight:600;}
+.banner-text h2:after{content:" "; width:100px; height:5px; background:#FFF; display:block; margin-top:20px; border-radius:3px;}
+.banner-text p{color:#fff;}
