@@ -13,10 +13,11 @@ export class AdminComponent implements OnInit {
   updateStatus: any;
   productStatus: any;
   updateReject: any;
+  images: any;
   constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
-
+    this.images = {image: 'assets/Images/logo.png'};
     this.userService.productsOfSeller().subscribe((result: any) => { console.log(result); this.pendingProducts = result; });
     console.log(this.pendingProducts);
 
@@ -29,7 +30,8 @@ export class AdminComponent implements OnInit {
   accept(product): any{
     console.log(product.productId);
     this.productStatus = "Accepted";
-    this.updateStatus = [product.productId, this.productStatus];
+    product.comment = 'Null';
+    this.updateStatus = [product.productId, this.productStatus, product.comment];
     console.log(this.updateStatus);
     this.userService.updateSellerStatus(this.updateStatus).subscribe((data: any) => {
       console.log("Status Updated");
@@ -39,7 +41,7 @@ export class AdminComponent implements OnInit {
   reject(product){
     console.log(product.productId);
     this.productStatus = "Rejected";
-    this.updateStatus = [product.productId, this.productStatus];
+    this.updateStatus = [product.productId, this.productStatus, product.comment];
     console.log(this.updateStatus);
     this.userService.updateSellerStatus(this.updateStatus).subscribe((data: any) => {
       console.log("Status Updated");
